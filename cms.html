@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webgig</title>
+    <title>WebGIG</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+
     <header>
         <h1>Project WebGIG</h1>
         <button id="toggle-button" class="toggle-button">X</button> 
     </header>
-    
+
     <!-- The modal window -->
     <div id="myModal" class="modal">
         <!-- Modal content -->
@@ -21,42 +21,35 @@
             <span class="close">&times;</span>
             <p id="modal-message"></p>
         </div>
-    </div>
+    </div>    
 
     <nav>
         <div id="dropdown" class="dropdown">
             <div class="navlinks">
                 <a href="index.html">Accueil</a>
                 <a href="services.html">Services</a>
-                <a href="pricing.html">Pricing</a>         
+                <a href="pricing.html">Pricing</a>            
                 <a href="cms.html">Login/CMS</a>
-                <a href="faq.html">FAQ</a>     
+                <a href="faq.html">FAQ</a>  
             </div>
         </div>  
     </nav>
+
+    <div class="sidebar">
+        <div class="section" draggable="true" data-section="1">Intro</div>
+        <div class="section" draggable="true" data-section="2">Content</div>
+        <div class="section" draggable="true" data-section="3">Calendrier</div>
+        <div class="section" draggable="true" data-section="4">Payment</div>
+        <div class="section" draggable="true" data-section="5">Reviews</div>
+        <div class="section" draggable="true" data-section="6">Footer</div>
+      </div>
+      
+    <div class="page">
+        <div class="dropzone">Drop it here!</div>
+    </div>
+
+    <button id="send-btn">Send</button>
     
-    <div class="section">
-        <h2>Bienvenue sur WebGIG!</h2>
-        <img id="intro-img" src="https://cdn.pixabay.com/photo/2016/10/28/16/31/website-1778529_640.png" alt="Image">
-        <br>
-        <button>Start</button>
-    </div>
-
-    <div class="section">
-        <h2>What we do?</h2>
-    </div>
-
-    <div class="section">
-        <h2>Video MVP</h2>
-    </div>
-
-    <div class="section">
-        <h2>Blog</h2>
-    </div>
-
-    <footer>Footer</footer>
-    
-<script src="app.js"></script>
-
+    <script src="cms.js"></script>
 </body>
 </html>

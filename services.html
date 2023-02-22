@@ -13,7 +13,7 @@
         <h1>Project WebGIG</h1>
         <button id="toggle-button" class="toggle-button">X</button> 
     </header>
-    
+
     <!-- The modal window -->
     <div id="myModal" class="modal">
         <!-- Modal content -->
@@ -28,30 +28,57 @@
             <div class="navlinks">
                 <a href="index.html">Accueil</a>
                 <a href="services.html">Services</a>
-                <a href="pricing.html">Pricing</a>         
+                <a href="pricing.html">Pricing</a>        
                 <a href="cms.html">Login/CMS</a>
-                <a href="faq.html">FAQ</a>     
+                <a href="faq.html">FAQ</a>      
             </div>
         </div>  
     </nav>
     
     <div class="section">
-        <h2>Bienvenue sur WebGIG!</h2>
-        <img id="intro-img" src="https://cdn.pixabay.com/photo/2016/10/28/16/31/website-1778529_640.png" alt="Image">
-        <br>
-        <button>Start</button>
+        <h2>Format</h2>
+        <ul>
+            <li>White label</li>
+            <li>Custom domain</li>
+        </ul>
+        <button onclick="openModal('format')">Différences</button>
     </div>
 
     <div class="section">
-        <h2>What we do?</h2>
+        <h2>Services</h2>
+        <p>Différentes sections...</p>
+        <button onclick="openModal('services')">Voir</button>
     </div>
 
     <div class="section">
-        <h2>Video MVP</h2>
+        <h2>Intégrations</h2>
+        <ul>
+            <li>Stripe</li>
+            <li>Calendly</li>
+        </ul>
+        <button onclick="openModal('integrations')">Plus</button>
     </div>
 
     <div class="section">
-        <h2>Blog</h2>
+        <h2>Custom domain</h2>
+        <ul>
+            <li>Nom de domaine</li>
+            <li>Hébergement</li>
+            <li>Certificat SSL</li>
+            <li>SEO</li>
+            <li>Maintenance</li>
+            <li>Analytics</li>
+        </ul>
+        <button onclick="openModal('customDomain')">Voir</button>
+    </div>
+
+    <div class="section">
+        <h2>Customizations</h2>
+        <ul>
+            <li>Templates</li>
+            <li>Couleurs</li>
+            <li>Police</li>
+        </ul>
     </div>
 
     <footer>Footer</footer>

@@ -1,76 +1,65 @@
-const dropzone = document.querySelector('.dropzone');
+// Hamburger
 
-function handleDragStart(event) {
-  event.dataTransfer.setData('text/plain', event.target.dataset.section);
-}
+const toggleButton = document.getElementById('toggle-button');
+const dropdown = document.getElementById('dropdown');
 
-function handleDragOver(event) {
-  event.preventDefault();
-}
+dropdown.style.display = 'none'
 
-function handleDrop(event) {
-  event.preventDefault();
-  const sectionId = event.dataTransfer.getData('text/plain');
-  const section = document.querySelector(`.section[data-section="${sectionId}"]`);
-  const newSection = document.createElement('div');
-  newSection.classList.add('dropzone-section');
-  newSection.setAttribute('id', `section-${sectionId}`);
-  newSection.setAttribute('data-section', sectionId);
-  newSection.innerHTML = `
-    <div class="dropzone-section-text">${section.textContent}</div>
-    <div class="dropzone-section-buttons">
-      <button class="section-modify">Modify</button>
-      <button class="section-delete">Delete</button>
-    </div>
-  `;
-  dropzone.appendChild(newSection);
-}
+toggleButton.addEventListener('click', () => {
+  console.log("Allo, je clique.")
+  // Add transition...
+  dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+});
 
-function handleSectionClick(event) {
-  console.log('Section button clicked');
-  if (event.target.classList.contains('section-delete')) {
-    console.log('Delete button clicked');
-    const section = event.target.closest('.dropzone-section');
-    console.log('Section element:', section);
-    if (section !== null) {
-      section.remove();
-    }
-  } else if (event.target.classList.contains('section-modify')) {
-    console.log('Modify button clicked');
-    const section = event.target.closest('.dropzone-section');
-    console.log('Section element:', section);
-    const text = section.querySelector('.dropzone-section-text').textContent;
-    const newText = prompt('Enter new section text:', text);
-    if (newText !== null) {
-      section.querySelector('.dropzone-section-text').textContent = newText;
-    }
+const navLinks = document.querySelector('.navlinks');
+
+navLinks.addEventListener('click', (event) => {
+  if (event.target.tagName === 'A') {
+    navLinks.classList.remove('open');
+    const sectionId = event.target.getAttribute('href');
+    const section = document.querySelector(sectionId);
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+});
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// When the user clicks the button, open the modal 
+function openModal(index) {
+  modal.style.display = "block";
+  let word = document.getElementById("modal-message");
+
+  switch(index) {
+    case "format":
+      word.innerHTML = "Format!";
+      break;
+    case "services":
+      word.innerHTML = "Services!";
+      break;
+    case "integrations":
+      word.innerHTML = "Intégrations!";
+      break;
+    case "customDomain":
+      word.innerHTML = "Custom Domain!";
+      break;
+    default:
+      // nothing
+      break;
   }
 }
 
-function createSectionButtons() {
-  const sections = document.querySelectorAll('.dropzone-section');
-  sections.forEach(section => {
-    const modifyButton = document.createElement('button');
-    modifyButton.classList.add('section-modify');
-    modifyButton.textContent = 'Modify';
-    const deleteButton = document.createElement('button');
-    deleteButton.classList.add('section-delete');
-    deleteButton.textContent = 'Delete';
-    const buttonContainer = document.createElement('div');
-    buttonContainer.classList.add('dropzone-section-buttons');
-    buttonContainer.appendChild(modifyButton);
-    buttonContainer.appendChild(deleteButton);
-    section.appendChild(buttonContainer);
-  });
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
 }
 
-const sections = document.querySelectorAll('.section');
-sections.forEach(section => {
-  section.addEventListener('dragstart', handleDragStart);
-});
-
-dropzone.addEventListener('dragover', handleDragOver);
-dropzone.addEventListener('drop', handleDrop);
-dropzone.addEventListener('click', handleSectionClick);
-
-createSectionButtons();
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
