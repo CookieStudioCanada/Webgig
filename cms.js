@@ -23,7 +23,7 @@ function handleDrop(event) {
     <div class="dropzone-section-buttons">
       <button class="section-modify">Modify</button>
       <button class="section-delete">Delete</button>
-    </div>
+    </div>  
   `;
   dropzone.appendChild(newSection);
 }

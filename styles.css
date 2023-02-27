@@ -41,13 +41,22 @@ button {
 
 /* Sections */ 
 
+.sidebar-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 100%;
+}
+
 .sidebar {
   display: flex;
   flex-direction: column;
-  width: 200px;
-  height: 100%;
-  background-color: #eee;
-  padding: 20px;
+  width: 125px;
+}
+
+.column-cms {
+  flex: 1;
+  padding: 10px;
 }
 
 .section {
@@ -64,19 +73,10 @@ button {
   gap: 10px;
 }
 
-.page {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  background-color: #fff;
-  padding: 20px;
-}
-
 /* Dropzone */ 
 
 .dropzone {
   width: 90%;
-  height: 100%;
   border: 2px dashed #ccc;
   padding: 15px;
 }
@@ -89,7 +89,7 @@ button {
   padding: 10px;
   margin-bottom: 5px;
   margin-top: 5px;
-  border: 1px dashed grey;
+  border: 1px dashed blue;
 }
 
 .dropzone-section-buttons {
