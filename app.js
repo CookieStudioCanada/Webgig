@@ -1,3 +1,24 @@
+// New...
+
+function fadeInSections() {
+  const sections = document.querySelectorAll('.section');
+
+  sections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    if (rect.top <= (windowHeight - 100) && rect.bottom >= 100) {
+      section.classList.add('fade-in');
+    }
+  });
+}
+
+// Call the function initially
+fadeInSections();
+
+// Call the function on scroll
+window.addEventListener('scroll', fadeInSections);
+
 // Old hamburger
 
 const toggleButton = document.getElementById('toggle-button');
