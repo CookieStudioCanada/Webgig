@@ -18,6 +18,7 @@ header {
   display: flex;
   background-color:tomato;
   padding: 10px;
+  color: white;
 }
 
 header h1 {
@@ -43,7 +44,7 @@ img {
   margin: 20px;
 }
 
-/* Buttons */ 
+/* OLD Buttons 
 
 button {
   padding: 10px;
@@ -52,6 +53,27 @@ button {
   background-color: rgb(255, 99, 71);
   color: white;
   cursor: pointer;
+}*/ 
+
+/* Buttons */
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(255, 99, 71);
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: rgb(255, 70, 40);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:focus {
+  outline: none;
 }
 
 /* Sections */ 
@@ -156,6 +178,13 @@ button {
   height: 35px;
   cursor: pointer;
   color: black;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+.toggle-button:hover {
+  background-color: #f2f2f2;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .dropdown a {
