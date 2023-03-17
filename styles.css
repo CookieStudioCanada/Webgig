@@ -29,13 +29,14 @@ header h1 {
 footer {
   background-color: black;
   color: white;
+  padding: 20px;
 }
 
 /* Image */ 
 
 #intro-img {
-  height: 250px;
-  width: 250px;
+  width: 100%;
+  margin: 0;
 }
 
 img {
@@ -44,20 +45,17 @@ img {
   margin: 20px;
 }
 
-/* OLD Buttons 
-
-button {
-  padding: 10px;
-  border: 1px black solid;
-  border-radius: 10px;
-  background-color: rgb(255, 99, 71);
-  color: white;
-  cursor: pointer;
-}*/ 
-
 /* Buttons */
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 button {
   padding: 10px;
+  margin: auto;
   border: none;
   border-radius: 10px;
   background-color: rgb(255, 99, 71);
@@ -132,15 +130,47 @@ button:focus {
 .subsection {
   width: 90%;
   border: 1px solid #e0e0e0;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #f5f5f5;
-  margin: 10px;
-  padding: 10px;
-  transition: background-color 0.3s ease;
+  margin: 10px auto;
+  padding: 15px;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .subsection:hover {
-  background-color: #e8e8e8;
+  transform: scale(1.02);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .subsection:hover {
+    transform: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .subsection:active {
+    transform: scale(1.02);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.subsection img,
+.subsection video {
+  max-width: 100%;
+  max-height: 150px;
+  margin-right: 15px;
+}
+
+.subsection h3 {
+  margin: 0 0 5px;
+  font-weight: 500;
+}
+
+.subsection p {
+  margin: 0;
 }
 
 /* Dropzone */ 
@@ -179,7 +209,6 @@ button:focus {
   cursor: pointer;
   color: black;
   border-radius: 5px;
-  transition: all 0.2s ease;
 }
 
 .toggle-button:hover {
@@ -190,65 +219,100 @@ button:focus {
 .dropdown a {
   display: inline-block;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   padding: 12px 24px;
+  background-color: #ffffff;
+  border-radius: 5px;
 }
 
 .navlinks {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
-  gap: 5px;
+  gap: 10px;
 }
 
 .navlinks a {
   text-decoration: none;
-  color: black;
-  border-bottom: dashed 1px black;
+  color: #333333;
+  border-bottom: dashed 1px #e0e0e0;
+}
+
+.navlinks a:hover {
+  background-color: #f2f2f2;
+  color: tomato;
+  border-bottom: dashed 1px tomato;
+  transform: scale(1.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* The modal window */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* Modal content */
 .modal-content {
   background-color: white;
-  margin: 10% auto; /* 15% from the top and centered */
-  padding: 10px;
-  border: 1px solid rgb(0, 0, 0);
-  width: 85%; /* Could be more or less, depending on screen size */
+  margin: 10% auto;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  width: 85%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* The close button  */
+/* The close button */
 .close {
   color: rgb(0, 0, 0);
   float: right;
   font-size: 28px;
   font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  text-decoration: none;
   cursor: pointer;
 }
 
+.close:hover {
+  color: rgb(255, 99, 71);
+}
+
+@keyframes modalOpen {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalClose {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
+
+.modal-content {
+  animation-duration: 0.3s;
+}
 
 /* New */ 
 
 @media screen and (max-width: 768px) {
   .section {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
 
   .subsection {
@@ -261,3 +325,77 @@ button:focus {
   transform: translateY(0);
 }
 
+/* Intro styles */
+
+#intro {
+  text-align: left;
+  position: relative;
+  margin: 0;
+  margin-bottom:25px;
+}
+
+#intro button {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.intro {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.intro h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: tomato;
+  margin-bottom: 25px;
+}
+
+.line-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.line {
+  height: 3px;
+  background-color: tomato;
+  transition: width 0.5s ease;
+}
+
+.line1 {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.line2 {
+  width: 100px;
+  margin-right: 10px;
+}
+
+.line3 {
+  width: 50px;
+}
+
+.intro:hover .line1 {
+  width: 70px;
+}
+
+.intro:hover .line2 {
+  width: 120px;
+}
+
+.intro:hover .line3 {
+  width: 70px;
+}
+
+@media (hover: none) {
+  .intro:active {
+    transform: scale(0.98);
+  }
+}

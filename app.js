@@ -51,7 +51,11 @@ function openModal(index) {
   modal.style.display = "block";
   let word = document.getElementById("modal-message");
 
+  const modalContent = modal.querySelector('.modal-content');
+  modalContent.style.animationName = 'modalOpen';
+ 
   switch(index) {
+
     case "format":
       word.innerHTML = 
       ` <h3>Format</h3>
@@ -133,12 +137,14 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
+
   modal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
+    
     modal.style.display = "none";
   }
 }
