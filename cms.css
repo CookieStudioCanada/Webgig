@@ -82,9 +82,6 @@ button {
   border: 1px solid #e0e0e0;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.5s ease-out;
 }
 
 .section-buttons {
@@ -213,22 +210,3 @@ button {
   text-decoration: none;
   cursor: pointer;
 }
-
-
-/* New */ 
-
-@media screen and (max-width: 768px) {
-  .section {
-    margin-bottom: 30px;
-  }
-
-  .subsection {
-    width: 95%;
-  }
-}
-
-.section.fade-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
