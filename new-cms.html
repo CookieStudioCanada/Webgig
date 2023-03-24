@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webgig</title>
+    <link rel="stylesheet" href="new-cms.css">    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.4.5/jscolor.min.js"></script>
+
+</head>
+<body>
+    
+    <header>
+        <h1>WebGIG</h1>
+        <button class="toggle-button" id="toggle-button">X</button>
+    </header>
+
+    <nav>
+        <div id="dropdown" class="dropdown">
+            <div class="navlinks">
+                <a href="index.html">Accueil</a>
+                <a href="services.html">Services</a>
+                <a href="pricing.html">Pricing</a>         
+                <a href="cms.html">Login/CMS</a>
+                <a href="faq.html">FAQ</a>     
+            </div>
+        </div>  
+    </nav>
+
+    <div class="form-container">
+        <h2>Describe your company!</h2>
+        <form id="website-creation-form" action="your-server-side-script" method="POST">
+            <div class="form-group">
+              <label for="company-name">Company Name:</label>
+              <input type="text" id="company-name" name="company-name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="sectors">Sectors:</label>
+              <input type="text" id="sectors" name="sectors" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="website-style">Style of the Website:</label>
+              <select id="website-style" name="website-style" required>
+                <option value="">Choose a style</option>
+                <option value="style1">Style 1</option>
+                <option value="style2">Style 2</option>
+                <option value="style3">Style 3</option>
+              </select>
+            </div>
+      
+            <div class="form-group">
+              <label for="domain-type">White Label or Custom Domain:</label>
+              <select id="domain-type" name="domain-type" required>
+                <option value="">Choose an option</option>
+                <option value="white-label">White Label</option>
+                <option value="custom-domain">Custom Domain</option>
+              </select>
+            </div>
+      
+            <div class="form-group">
+              <label>Choose 3 Primary Colors:</label>
+              <input class="jscolor" id="color1" name="color1" required>
+              <input class="jscolor" id="color2" name="color2" required>
+              <input class="jscolor" id="color3" name="color3" required>
+            </div>
+      
+            <div class="form-group">
+              <label>Choose a Template:</label>
+              <input type="radio" id="template1" name="template" value="template1" required>
+              <label for="template1">Template 1</label>
+              <input type="radio" id="template2" name="template" value="template2" required>
+              <label for="template2">Template 2</label>
+              <input type="radio" id="template3" name="template" value="template3" required>
+              <label for="template3">Template 3</label>
+            </div>
+
+            <h2>Sections</h2>
+            <div class="section-list">
+            <!-- Section: Intro -->
+            <div class="section">
+                <h4 class="section-title">Intro</h4>
+                <p class="section-content">Content for the intro section...</p>
+                <div class="section-buttons">
+                <button type="button" class="section-btn">Layout</button>
+                <button type="button" class="section-btn">Delete</button>
+                <button type="button" class="section-btn">Media</button>
+                <button type="button" class="section-btn move-btn">Move</button>
+                </div>
+            </div>
+
+            <!-- Section: Products/Services -->
+            <div class="section">
+                <h4 class="section-title">Products/Services</h4>
+                <p class="section-content">Content for the products/services section...</p>
+                <div class="section-buttons">
+                <button type="button" class="section-btn">Layout</button>
+                <button type="button" class="section-btn">Delete</button>
+                <button type="button" class="section-btn">Media</button>
+                <button type="button" class="section-btn move-btn">Move</button>
+                </div>
+            </div>
+
+            <!-- Section: Review -->
+            <div class="section">
+                <h4 class="section-title">Review</h4>
+                <p class="section-content">Content for the review section...</p>
+                <div class="section-buttons">
+                <button type="button" class="section-btn">Layout</button>
+                <button type="button" class="section-btn">Delete</button>
+                <button type="button" class="section-btn">Media</button>
+                <button type="button" class="section-btn move-btn">Move</button>
+                </div>
+            </div>
+
+            <!-- Section: Blog -->
+            <div class="section">
+                <h4 class="section-title">Blog</h4>
+                <p class="section-content">Content for the blog section...</p>
+                <div class="section-buttons">
+                <button type="button" class="section-btn">Layout</button>
+                <button type="button" class="section-btn">Delete</button>
+                <button type="button" class="section-btn">Media</button>
+                <button type="button" class="section-btn move-btn">Move</button>
+                </div>
+            </div>
+
+            <!-- Section: FAQ -->
+            <div class="section">
+                <h4 class="section-title">FAQ</h4>
+                <p class="section-content">Content for the FAQ section...</p>
+                <div class="section-buttons">
+                <button type="button" class="section-btn">Layout</button>
+                <button type="button" class="section-btn">Delete</button>
+                <button type="button" class="section-btn">Media</button>
+                <button type="button" class="section-btn move-btn">Move</button>
+                </div>
+            </div>
+
+            <!-- Section: Footer -->
+            <div class="section">
+                <h4 class="section-title">Footer</h4>
+                <p class="section-content">Content for the footer section...</p>
+                <div class="section-buttons">
+                    <button type="button" class="section-btn">Layout</button>
+                    <button type="button" class="section-btn">Delete</button>
+                    <button type="button" class="section-btn">Media</button>
+                    <button type="button" class="section-btn move-btn">Move</button>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit">Submit</button>
+          </form>
+    </div>
+
+    <footer>
+        <p>Copyright 2023 (C) Cookies technology</p> 
+    </footer>
+    
+<script src="new-cms.js"></script>
+
+</body>
+</html>
