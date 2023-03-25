@@ -401,6 +401,12 @@ button:focus {
   }
 }
 
+/* Video */
+
+.styled-video {
+  border-radius: 10px;
+}
+
 /* Scroll... */
 
 .scroll-indicator {
