@@ -438,3 +438,13 @@ button:focus {
     transform: translateY(-5px) rotate(45deg);
   }
 }
+
+/* subsections list */
+.subsection ul {
+    list-style-position: inside;
+    padding-left: 0;
+    text-align: left;
+    display: inline-block;
+}
+
+
