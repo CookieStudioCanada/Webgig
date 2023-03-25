@@ -84,8 +84,8 @@
                 <h4 class="section-title">Intro</h4>
                 <p class="section-content">Content for the intro section...</p>
                 <div class="section-buttons">
-                <button type="button" class="section-btn">Layout</button>
-                <button type="button" class="section-btn">Delete</button>
+                <button type="button" class="section-btn layout-btn">Layout</button>
+                <button type="button" class="section-btn delete-btn">Delete</button>
                 <button type="button" class="section-btn">Media</button>
                 <button type="button" class="section-btn move-btn">Move</button>
                 </div>
@@ -96,8 +96,8 @@
                 <h4 class="section-title">Products/Services</h4>
                 <p class="section-content">Content for the products/services section...</p>
                 <div class="section-buttons">
-                <button type="button" class="section-btn">Layout</button>
-                <button type="button" class="section-btn">Delete</button>
+                <button type="button" class="section-btn layout-btn">Layout</button>
+                <button type="button" class="section-btn delete-btn">Delete</button>
                 <button type="button" class="section-btn">Media</button>
                 <button type="button" class="section-btn move-btn">Move</button>
                 </div>
@@ -108,8 +108,8 @@
                 <h4 class="section-title">Review</h4>
                 <p class="section-content">Content for the review section...</p>
                 <div class="section-buttons">
-                <button type="button" class="section-btn">Layout</button>
-                <button type="button" class="section-btn">Delete</button>
+                <button type="button" class="section-btn layout-btn">Layout</button>
+                <button type="button" class="section-btn delete-btn">Delete</button>
                 <button type="button" class="section-btn">Media</button>
                 <button type="button" class="section-btn move-btn">Move</button>
                 </div>
@@ -120,8 +120,8 @@
                 <h4 class="section-title">Blog</h4>
                 <p class="section-content">Content for the blog section...</p>
                 <div class="section-buttons">
-                <button type="button" class="section-btn">Layout</button>
-                <button type="button" class="section-btn">Delete</button>
+                <button type="button" class="section-btn layout-btn">Layout</button>
+                <button type="button" class="section-btn delete-btn">Delete</button>
                 <button type="button" class="section-btn">Media</button>
                 <button type="button" class="section-btn move-btn">Move</button>
                 </div>
@@ -132,8 +132,8 @@
                 <h4 class="section-title">FAQ</h4>
                 <p class="section-content">Content for the FAQ section...</p>
                 <div class="section-buttons">
-                <button type="button" class="section-btn">Layout</button>
-                <button type="button" class="section-btn">Delete</button>
+                <button type="button" class="section-btn layout-btn">Layout</button>
+                <button type="button" class="section-btn delete-btn">Delete</button>
                 <button type="button" class="section-btn">Media</button>
                 <button type="button" class="section-btn move-btn">Move</button>
                 </div>
@@ -144,14 +144,28 @@
                 <h4 class="section-title">Footer</h4>
                 <p class="section-content">Content for the footer section...</p>
                 <div class="section-buttons">
-                    <button type="button" class="section-btn">Layout</button>
-                    <button type="button" class="section-btn">Delete</button>
+                    <button type="button" class="section-btn layout-btn">Layout</button>
+                    <button type="button" class="section-btn delete-btn">Delete</button>
                     <button type="button" class="section-btn">Media</button>
                     <button type="button" class="section-btn move-btn">Move</button>
                     </div>
                 </div>
             </div>
-
+            
+            <div class="add-section-container">
+              <button type="button" id="add-section-btn">Add a section</button>
+              <select id="add-section-dropdown" class="hidden">
+                <option value="intro">Intro</option>
+                <option value="products-services">Products/Services</option>
+                <option value="review">Review</option>
+                <option value="blog">Blog</option>
+                <option value="faq">FAQ</option>
+                <option value="footer">Footer</option>
+                <option value="payment">Payment</option>
+                <option value="calendly">Calendly</option>
+              </select>
+            </div>
+            <br>
             <button type="submit">Submit</button>
           </form>
     </div>
