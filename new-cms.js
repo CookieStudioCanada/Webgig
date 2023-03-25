@@ -112,7 +112,7 @@
               <div class="section-buttons">
                 <button type="button" class="section-btn layout-btn">Layout</button>
                 <button type="button" class="section-btn delete-btn">Delete</button>
-                <button type="button" class="section-btn">Add Media</button>
+                <button type="button" class="section-btn">Media</button>
                 <button type="button" class="section-btn move-btn">Move</button>
               </div>
             </div>
@@ -124,7 +124,7 @@
               <div class="section-buttons">
                 <button type="button" class="section-btn layout-btn">Layout</button>
                 <button type="button" class="section-btn delete-btn">Delete</button>
-                <button type="button" class="section-btn">Add Media</button>
+                <button type="button" class="section-btn">Media</button>
                 <button type="button" class="section-btn move-btn">Move</button>
               </div>
             </div>
@@ -136,7 +136,7 @@
               <div class="section-buttons">
                 <button type="button" class="section-btn layout-btn">Layout</button>
                 <button type="button" class="section-btn delete-btn">Delete</button>
-                <button type="button" class="section-btn">Add Media</button>
+                <button type="button" class="section-btn">Media</button>
                 <button type="button" class="section-btn move-btn">Move</button>
               </div>
             </div>
@@ -148,7 +148,7 @@
               <div class="section-buttons">
                 <button type="button" class="section-btn layout-btn">Layout</button>
                 <button type="button" class="section-btn delete-btn">Delete</button>
-                <button type="button" class="section-btn">Add Media</button>
+                <button type="button" class="section-btn">Media</button>
                 <button type="button" class="section-btn move-btn">Move</button>
               </div>
             </div>
@@ -160,7 +160,7 @@
               <div class="section-buttons">
                 <button type="button" class="section-btn layout-btn">Layout</button>
                 <button type="button" class="section-btn delete-btn">Delete</button>
-                <button type="button" class="section-btn">Add Media</button>
+                <button type="button" class="section-btn">Media</button>
                 <button type="button" class="section-btn move-btn">Move</button>
               </div>
             </div>
@@ -172,7 +172,7 @@
             <div class="section-buttons">
               <button type="button" class="section-btn layout-btn">Layout</button>
               <button type="button" class="section-btn delete-btn">Delete</button>
-              <button type="button" class="section-btn">Add Media</button>
+              <button type="button" class="section-btn">Media</button>
               <button type="button" class="section-btn move-btn">Move</button>
             </div>
           </div>
@@ -184,7 +184,7 @@
             <div class="section-buttons">
               <button type="button" class="section-btn layout-btn">Layout</button>
               <button type="button" class="section-btn delete-btn">Delete</button>
-              <button type="button" class="section-btn">Add Media</button>
+              <button type="button" class="section-btn">Media</button>
               <button type="button" class="section-btn move-btn">Move</button>
             </div>
           </div>
@@ -196,7 +196,7 @@
             <div class="section-buttons">
               <button type="button" class="section-btn layout-btn">Layout</button>
               <button type="button" class="section-btn delete-btn">Delete</button>
-              <button type="button" class="section-btn">Add Media</button>
+              <button type="button" class="section-btn">Media</button>
               <button type="button" class="section-btn move-btn">Move</button>
             </div>
           </div>
