@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "openai": "^3.2.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "webgig",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CookieStudioCanada/Webgig.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CookieStudioCanada/Webgig/issues"
+  },
+  "homepage": "https://github.com/CookieStudioCanada/Webgig#readme",
+  "description": ""
+}

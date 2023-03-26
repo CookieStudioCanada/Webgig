@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webgig</title>
+    <link rel="stylesheet" href="styles.css">    
+</head>
+<body>
+    
+    <header>
+        <a href="index.html">
+            <h1>WebGIG</h1>
+        </a>
+        <button class="toggle-button" id="toggle-button">X</button>
+    </header>
+    
+    <!-- The modal window -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-message"></p>
+        </div>
+    </div>
+
+    <nav>
+        <div id="dropdown" class="dropdown">
+            <div class="navlinks">
+                <a href="index.html">Accueil</a>
+                <a href="services.html">Services</a>
+                <a href="pricing.html">Pricing</a>         
+                <a href="new-cms.html">Login/CMS</a>
+                <a href="faq.html">FAQ</a>     
+            </div>
+        </div>  
+    </nav>
+
+    <h1>OpenAI GPT Integration</h1>
+    <p>Enter your prompt:</p>
+    <textarea id="prompt" rows="4" cols="50"></textarea><br>
+    <button onclick="generateText()">Generate Text</button>
+    <h2>Generated Text:</h2>
+    <pre id="generated-text"></pre>
+
+    <footer>
+        <p>Copyright 2023 (C) Cookies technology</p> 
+    </footer>
+    
+<script src="app.js"></script>
+
+</body>
+</html>
