@@ -6,8 +6,9 @@
   dropdown.style.display = 'none'
   
   toggleButton.addEventListener('click', () => {
-    console.log("Allo, je clique.")
-    // Add transition...
+
+    var nav = document.querySelector("nav");
+    nav.classList.toggle("nav-visible");
     dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
   });
   
@@ -267,3 +268,87 @@
   // Attach the function to a button or another event
   document.getElementById("start-tour-btn").addEventListener("click", startTour);
   
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// When the user clicks the button, open the modal 
+function openModal(index) {
+  modal.style.display = "block";
+  let word = document.getElementById("modal-message");
+
+  const modalContent = modal.querySelector('.modal-content');
+  modalContent.style.animationName = 'modalOpen';
+ 
+  switch(index) {
+
+    case "doc":
+      word.innerHTML = 
+      ` 
+      <h1>Project Documentation: WebGIG CMS</h1>
+      <h2>Table of Contents</h2>
+      <ul>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#getting-started">Getting Started</a></li>
+          <li><a href="#customizing-your-website">Customizing Your Website</a></li>
+          <li><a href="#managing-content">Managing Content</a></li>
+          <li><a href="#integrations">Integrations</a></li>
+          <li><a href="#faqs">FAQs</a></li>
+          <li><a href="#support">Support</a></li>
+      </ul>
+
+      <h2 id="introduction">Introduction</h2>
+      <p>WebGIG CMS is a user-friendly content management system designed for professionals and gig workers who want to create a visually appealing and functional one-page website. With our simple CMS, you can easily manage and update your website's content without any coding knowledge. Our team at WebGIG is committed to creating the perfect website for you in less than 48 hours, allowing you to focus on growing your business.</p>
+      <p>This documentation will guide you through the process of setting up and customizing your website using WebGIG CMS.</p>
+
+      <h2 id="getting-started">Getting Started</h2>
+      <h3>Signing Up</h3>
+      <p>You can start building your website right away using WebGIG CMS without signing up for an account. Simply navigate to our website and access the CMS to begin customizing your site. When you're ready to submit your choices and make your website live, you'll be redirected to the payment and account creation pages. After completing these steps, your website will be up and running.</p>
+      <h3>Choosing a Template</h3>
+      <p>WebGIG CMS offers a variety of pre-designed templates to help you create an attractive and professional website. To choose a template, navigate to the "Templates" section in the CMS dashboard and select the one that best fits your needs.</p>
+
+      <h2 id="customizing-your-website">Customizing Your Website</h2>
+      <h3>Customizing the Design</h3>
+      <p>You can easily customize the design of your website using the built-in design options in WebGIG CMS. Navigate to the "Design" section in the dashboard to adjust colors, fonts, and other design elements.</p>
+      <h3>Adding Content</h3>
+      <p>To add content to your website, navigate to the "Content" section in the CMS dashboard. Here, you can add, edit, and delete content sections, such as text, images, and videos. Simply click on the desired section type and fill in the required information.</p>
+      <h2 id="managing-content">Managing Content</h2>
+      <h3>Updating Your Website</h3>
+      <p>You can update your website at any time by navigating to the "Content" section in the CMS dashboard. Make the desired changes and click "Save" to update your website.</p>
+      <h3>Organizing Content</h3>
+      <p>You can organize your website's content by reordering sections within the CMS. Simply click and drag the section you want to move, and drop it into the desired position. Don't forget to save your changes when you're done.</p>
+      
+      <h2 id="integrations">Integrations</h2>
+      <p>WebGIG CMS supports various integrations with popular third-party services, such as Stripe for payment processing and Calendly for scheduling appointments. To add an integration, navigate to the "Integrations" section in the CMS dashboard and follow the instructions provided.</p>
+  
+      <h2 id="faqs">FAQs</h2>
+      <p>If you have any questions about using WebGIG CMS, please consult our Frequently Asked Questions (FAQs) section. If you can't find the answer you're looking for, feel free to reach out to our support team.</p>
+  
+      <h2 id="support">Support</h2>
+      <p>We're here to help! If you need assistance or have any questions, please don't hesitate to contact our support team. You can reach us through the "Contact Us" form on our website or by sending an email to support@example.com.</p>
+  
+      `
+      break;
+
+    default:
+      // nothing
+      break;
+  }
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    
+    modal.style.display = "none";
+  }
+}
