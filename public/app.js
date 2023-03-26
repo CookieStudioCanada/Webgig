@@ -149,7 +149,7 @@ window.onclick = function(event) {
   }
 }
 
-// OpenAI integration
+// OpenAI integration + Server.js 
 
 async function generateText() {
   const prompt = document.getElementById("prompt").value; // Assuming you have a textarea or input with the id "prompt"
