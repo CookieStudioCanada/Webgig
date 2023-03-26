@@ -257,5 +257,13 @@
       addSection();
     }
   });
+
+  // New intro.js
+
+  function startTour() {
+    introJs().start();
+  }
   
+  // Attach the function to a button or another event
+  document.getElementById("start-tour-btn").addEventListener("click", startTour);
   

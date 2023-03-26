@@ -7,14 +7,20 @@
     <title>Webgig</title>
     <link rel="stylesheet" href="new-cms.css">    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.4.5/jscolor.min.js"></script>
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/4.1.0/introjs.min.css" rel="stylesheet">
+    <link href="custom-introjs-styles.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/4.1.0/intro.min.js"></script>
+  </head>
 </head>
 <body>
     
-    <header>
+  <header>
+    <a href="index.html">
         <h1>WebGIG</h1>
-        <button class="toggle-button" id="toggle-button">X</button>
-    </header>
+    </a>
+    <button class="toggle-button" id="start-tour-btn">?</button>
+    <button class="toggle-button" id="toggle-button">X</button>
+  </header>
 
     <nav>
       <div id="dropdown" class="dropdown">
@@ -32,13 +38,13 @@
         <h2>Describe your company!</h2>
         <form id="website-creation-form" action="your-server-side-script" method="POST">
             <div class="form-group">
-              <label for="company-name">Company Name:</label>
-              <input type="text" id="company-name" name="company-name" required>
+              <label for="company-name" >Company Name:</label>
+              <input data-step="1" data-intro="Company name?" type="text" id="company-name" name="company-name" required>
             </div>
             
             <div class="form-group">
               <label for="sectors">Sectors:</label>
-              <input type="text" id="sectors" name="sectors" required>
+              <input data-step="2" data-intro="Please describe the sector of your company." type="text" id="sectors" name="sectors" required>
             </div>
             
             <div class="form-group">
@@ -165,7 +171,7 @@
                 <option value="calendly">Calendly</option>
               </select>
             </div>
-            
+
             <br>
             <button type="submit">Submit</button>
           </form>
