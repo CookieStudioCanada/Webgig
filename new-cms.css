@@ -24,6 +24,14 @@ h3 {
   font-weight: normal;
 }
 
+h5 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+  font-weight: normal;
+  font-size: large;
+}
+
 ul {
   list-style-position: inside;
   padding-left: 0;
@@ -243,16 +251,6 @@ footer {
   border-bottom: dashed 1px tomato;
   transform: scale(1.05);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.nav-hidden {
-  transform: translateY(calc(-100% + 57px));
-  transition: all 0.3s ease-in-out;
-}
-
-.nav-visible {
-  transform: translateY(0);
-  transition: all 0.3s ease-in-out;
 }
 
 /* Add sections */

@@ -19,11 +19,11 @@
         <h1>WebGIG</h1>
     </a>
     <button class="toggle-button" onclick="openModal('doc')">DOC</button>
-    <button class="toggle-button" id="start-tour-btn">?</button>
+    <button data-step="1" data-intro="<h5>Welcome to Wegig CMS</h5>Please love it!" class="toggle-button" id="start-tour-btn">?</button>
     <button class="toggle-button" id="toggle-button">X</button>
   </header>
 
-    <nav class="nav-hidden">
+    <nav>
       <div id="dropdown" class="dropdown">
           <div class="navlinks">
               <a href="index.html">Accueil</a>
@@ -45,21 +45,21 @@
     </div>
 
     <div class="form-container">
-        <h2>Describe your company!</h2>
+        <h2 >Describe your company!</h2>
         <form id="website-creation-form" action="your-server-side-script" method="POST">
             <div class="form-group">
               <label for="company-name">Company Name:</label>
-              <input data-step="1" data-intro="Please tell us what is the name of your business?" type="text" id="company-name" name="company-name" required>
+              <input data-step="2" data-intro="Please tell us what is the name of your business?" type="text" id="company-name" name="company-name" required>
             </div>
             
             <div class="form-group">
               <label for="sectors">Sectors:</label>
-              <input data-step="2" data-intro="Please describe the sector of your business." type="text" id="sectors" name="sectors" required>
+              <input data-step="3" data-intro="Please describe the sector of your business." type="text" id="sectors" name="sectors" required>
             </div>
             
             <div class="form-group">
               <label for="website-style">Style of the Website:</label>
-              <select data-step="3" data-intro="Please select the style of your website from product / services / small business. See exemples." id="website-style" name="website-style" required>
+              <select data-step="4" data-intro="Please select the style of your website from product / services / small business. See exemples." id="website-style" name="website-style" required>
                 <option value="">Choose a style</option>
                 <option value="style1">Style 1</option>
                 <option value="style2">Style 2</option>
@@ -69,7 +69,7 @@
       
             <div class="form-group">
               <label for="domain-type">White Label or Custom Domain:</label>
-              <select data-step="4" data-intro="Do you want a white label or custom domain. See differences." id="domain-type" name="domain-type" required>
+              <select data-step="5" data-intro="Do you want a white label or custom domain. See differences." id="domain-type" name="domain-type" required>
                 <option value="">Choose an option</option>
                 <option value="white-label">White Label</option>
                 <option value="custom-domain">Custom Domain</option>
@@ -77,14 +77,14 @@
             </div>
       
             <div class="form-group">
-              <label data-step="5" data-intro="What is the primary colors of your business. You can choose up to 3 colors.">Choose 3 Primary Colors:</label>
+              <label data-step="6" data-intro="What is the primary colors of your business. You can choose up to 3 colors.">Choose 3 Primary Colors:</label>
               <input class="jscolor" id="color1" name="color1" required>
               <input class="jscolor" id="color2" name="color2" required>
               <input class="jscolor" id="color3" name="color3" required>
             </div>
       
             <div class="form-group">
-              <label data-step="6" data-intro="Please select the template you want. See exemples.">Choose a Template:</label>
+              <label data-step="7" data-intro="Please select the template you want. See exemples.">Choose a Template:</label>
               <input type="radio" id="template1" name="template" value="template1" required>
               <label for="template1">Template 1</label>
               <input type="radio" id="template2" name="template" value="template2" required>
@@ -93,17 +93,17 @@
               <label for="template3">Template 3</label>
             </div>
 
-            <h2 data-step="7" data-intro="Here is the playground... You can modify content, delete, add medias, move the sections and also add new sections.">Playground</h2>
+            <h2 data-step="8" data-intro="Here is the playground... You can modify content, delete, add medias, move the sections and also add new sections.">Playground</h2>
             <div class="section-list">
             <!-- Section: Intro -->
-            <div data-step="8" data-intro="Here is a section. To modify content, delete, add medias or move the sections, click on the buttons."class="section">
+            <div data-step="9" data-intro="Here is a section. To modify content, delete, add medias or move the sections, click on the buttons."class="section">
                 <h4 class="section-title">Intro</h4>
                 <p class="section-content">Content for the intro section...</p>
                 <div class="section-buttons">
-                <button data-step="9" data-intro="Modify buttons. Please note that our team will provide you with contents based on this form."type="button" class="section-btn layout-btn">Layout</button>
-                <button data-step="10" data-intro="Press to delete section." type="button" class="section-btn delete-btn">Delete</button>
-                <button data-step="11" data-intro="Press to add image and video to this section." type="button" class="section-btn">Media</button>
-                <button data-step="12" data-intro="Press to move up and down this section. Once selected, the border will become red and you can chose a section to be replaced." type="button" class="section-btn move-btn">Move</button>
+                <button data-step="10" data-intro="Modify buttons. Please note that our team will provide you with contents based on this form."type="button" class="section-btn layout-btn">Layout</button>
+                <button data-step="11" data-intro="Press to delete section." type="button" class="section-btn delete-btn">Delete</button>
+                <button data-step="12" data-intro="Press to add image and video to this section." type="button" class="section-btn">Media</button>
+                <button data-step="13" data-intro="Press to move up and down this section. Once selected, the border will become red and you can chose a section to be replaced." type="button" class="section-btn move-btn">Move</button>
                 </div>
             </div>
 
@@ -169,7 +169,7 @@
             </div>
             
             <div class="add-section-container">
-              <button data-step="13" data-intro="Click on a option to add a section." type="button" id="add-section-btn">Add a section</button>
+              <button data-step="14" data-intro="Click on a option to add a section." type="button" id="add-section-btn">Add a section</button>
               <select id="add-section-dropdown" class="hidden">
                 <option value="intro">Intro</option>
                 <option value="products-services">Products/Services</option>
@@ -183,7 +183,7 @@
             </div>
 
             <br>
-            <button data-step="14" data-intro="The submit button will save your choice, send you to create an account and payment page." type="submit">Submit</button>
+            <button data-step="15" data-intro="The submit button will save your choice, send you to create an account and payment page." type="submit">Submit</button>
           </form>
     </div>
 

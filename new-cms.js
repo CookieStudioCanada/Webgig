@@ -7,8 +7,7 @@
   
   toggleButton.addEventListener('click', () => {
 
-    var nav = document.querySelector("nav");
-    nav.classList.toggle("nav-visible");
+    // Add transition
     dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
   });
   
