@@ -351,3 +351,12 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+// Buttons - Add services
+
+htmlServices = document.getElementById("html-services");
+
+function addService() {
+  var list = prompt("Add services?");
+  htmlServices.innerHTML += "<li>" + list +"</li>";
+}

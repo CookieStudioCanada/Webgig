@@ -10,7 +10,7 @@ app.use(cors({
   allowedHeaders: ["Content-Type"], // Allow Content-Type header
 }));
 
-const API_KEY = "INSERT_YOUR_KEY_HERE"; // This is my new key : see notes - don't upload or it will leaked.
+const API_KEY = "YOUR_KEY"; // This is my new key : see notes - don't upload or it will leaked.
 const configuration = new Configuration({
   apiKey: API_KEY,
 });

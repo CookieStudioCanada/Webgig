@@ -149,6 +149,7 @@ window.onclick = function(event) {
   }
 }
 
+
 // OpenAI integration + Server.js 
 
 async function generateText() {
@@ -169,3 +170,5 @@ async function generateText() {
     alert("Error generating text.");
   }
 }
+
+// 

@@ -19,7 +19,7 @@
         <h1>WebGIG</h1>
     </a>
     <button class="toggle-button" onclick="openModal('doc')">DOC</button>
-    <button data-step="1" data-intro="<h5>Welcome to Wegig CMS</h5>Please love it!" class="toggle-button" id="start-tour-btn">?</button>
+    <button data-step="1" data-intro="<h5>Welcome to Wegig CMS</h5>This is a simple tour of how to use the CMS. For more questions, check out our <a style='text-decoration: underline'>Documentation</a> or <a style='text-decoration: underline'>Discord server</a>" class="toggle-button" id="start-tour-btn">?</button>
     <button class="toggle-button" id="toggle-button">X</button>
   </header>
 
@@ -44,57 +44,63 @@
           </div>
     </div>
 
-    <div class="form-container">
-        <h2 >Describe your company!</h2>
+    <div class="form-container"> <!-- Make href='docREF' in the underlined code. ALSO : Make title for each-->
         <form id="website-creation-form" action="your-server-side-script" method="POST">
-            <div class="form-group">
-              <label for="company-name">Company Name:</label>
-              <input data-step="2" data-intro="Please tell us what is the name of your business?" type="text" id="company-name" name="company-name" required>
+          <div class="the-form">
+
+            <h2>Describe your company!</h2>
+
+            <div data-step="2" data-intro="Please tell us the name of your business?" class="form-group">
+              <label for="company-name">Company Name</label>
+              <input type="text" id="company-name" name="company-name" required>
             </div>
             
-            <div class="form-group">
-              <label for="sectors">Sectors:</label>
-              <input data-step="3" data-intro="Please describe the sector of your business." type="text" id="sectors" name="sectors" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="website-style">Style of the Website:</label>
-              <select data-step="4" data-intro="Please select the style of your website from product / services / small business. See exemples." id="website-style" name="website-style" required>
-                <option value="">Choose a style</option>
-                <option value="style1">Style 1</option>
-                <option value="style2">Style 2</option>
-                <option value="style3">Style 3</option>
+            <div data-step="3" data-intro="What style fits most with your business? For more information, <a style='text-decoration: underline;'>see documentation</a>" class="form-group"> <!-- Make href='docREF' in the code.-->
+              <label for="sectors">Business description</label>
+              <select id="sectors" name="description" required>
+                <option value="">Choose an option</option>
+                <option value="product">Product (one product focus)</option>
+                <option value="freelancer">Freelancer (gig worker)</option>
+                <option value="smallteam">Small Team (0-5 SMB)</option>
+                <option value="artist">Artist</option>
               </select>
             </div>
+            
+            <div data-step="4" data-intro="Please tell us about your services. We want to know 3 things : Service name / Description / Pricing.<br><br><p>Exemple : Lawn mower : Get your lawn mows by our team (30$/h).</p>" class="form-group">
+              Services <button onclick="addService()">+</button>
+              <div id="html-services"></div> <!-- Make it required -->
+            </div>
       
-            <div class="form-group">
-              <label for="domain-type">White Label or Custom Domain:</label>
-              <select data-step="5" data-intro="Do you want a white label or custom domain. See differences." id="domain-type" name="domain-type" required>
+            <div data-step="5" data-intro="Do you want a white label or custom domain. See differences." class="form-group">
+              <label for="domain-type">White Label or Custom Domain</label>
+              <select id="domain-type" name="domain-type" required>
                 <option value="">Choose an option</option>
                 <option value="white-label">White Label</option>
                 <option value="custom-domain">Custom Domain</option>
               </select>
             </div>
       
-            <div class="form-group">
-              <label data-step="6" data-intro="What is the primary colors of your business. You can choose up to 3 colors.">Choose 3 Primary Colors:</label>
+            <div data-step="6" data-intro="What is the primary colors of your business. You can choose up to 3 colors." class="form-group">
+              <label>Choose 3 Primary Colors</label>
               <input class="jscolor" id="color1" name="color1" required>
               <input class="jscolor" id="color2" name="color2" required>
               <input class="jscolor" id="color3" name="color3" required>
             </div>
       
-            <div class="form-group">
-              <label data-step="7" data-intro="Please select the template you want. See exemples.">Choose a Template:</label>
+            <div data-step="7" data-intro="Please select the template you want. See exemples." class="form-group">
+              <label>Choose a Template</label>
               <input type="radio" id="template1" name="template" value="template1" required>
-              <label for="template1">Template 1</label>
+              <label for="template1">A</label>
               <input type="radio" id="template2" name="template" value="template2" required>
-              <label for="template2">Template 2</label>
+              <label for="template2">B</label>
               <input type="radio" id="template3" name="template" value="template3" required>
-              <label for="template3">Template 3</label>
+              <label for="template3">C</label>
             </div>
+          
+          </div>
+            <div data-step="8" data-intro="Here is the playground... You can modify content, delete, add medias, move the sections and also add new sections." class="section-list">
+            <h2>Playground</h2>
 
-            <h2 data-step="8" data-intro="Here is the playground... You can modify content, delete, add medias, move the sections and also add new sections.">Playground</h2>
-            <div class="section-list">
             <!-- Section: Intro -->
             <div data-step="9" data-intro="Here is a section. To modify content, delete, add medias or move the sections, click on the buttons."class="section">
                 <h4 class="section-title">Intro</h4>
@@ -168,9 +174,10 @@
                 </div>
             </div>
             
-            <div class="add-section-container">
-              <button data-step="14" data-intro="Click on a option to add a section." type="button" id="add-section-btn">Add a section</button>
+            <div data-step="14" data-intro="Click on the section you want to add." class="add-section-container">
+              <button type="button" id="add-section-btn">Add a section</button>
               <select id="add-section-dropdown" class="hidden">
+                <option value="">Choose an option</option>
                 <option value="intro">Intro</option>
                 <option value="products-services">Products/Services</option>
                 <option value="review">Review</option>

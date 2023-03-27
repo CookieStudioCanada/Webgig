@@ -27,8 +27,7 @@ h3 {
 h5 {
   margin-top: 0px;
   margin-bottom: 10px;
-  text-decoration: underline;
-  font-weight: normal;
+  font-weight: bold;
   font-size: large;
 }
 
@@ -83,12 +82,12 @@ button:focus {
   }
 
   .form-group {
+    margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   }
 
   label {
     display: block;
-    margin-bottom: 0.5rem;
   }
 
   input[type="text"],
@@ -330,4 +329,11 @@ footer {
 
 .modal-content {
   animation-duration: 0.3s;
+}
+
+.the-form {
+  border: black 1px solid;
+  border-radius: 16px;
+  background-color: lightgrey;
+  padding: 20px;
 }
