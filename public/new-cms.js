@@ -165,6 +165,18 @@
               </div>
             </div>
           `,
+          contactus: `
+          <div class="section">
+            <h4 class="section-title">Contact us</h4>
+            <p class="section-content">Add your : Phone, Email, Map, Calendly</p>
+            <div class="section-buttons">
+              <button type="button" class="section-btn layout-btn">Layout</button>
+              <button type="button" class="section-btn delete-btn">Delete</button>
+              <button type="button" class="section-btn">Media</button>
+              <button type="button" class="section-btn move-btn">Move</button>
+            </div>
+          </div>
+        `,
           footer: `
           <div class="section">
             <h4 class="section-title">Footer</h4>
@@ -352,11 +364,31 @@ window.onclick = function(event) {
   }
 }
 
-// Buttons - Add services
+// Introduction
 
-htmlServices = document.getElementById("html-services");
+document.getElementById('styleDropdown').addEventListener('change', function() {
+  var selectedText = this.options[this.selectedIndex].text;
+  document.getElementById('selectedOption').innerText = selectedText;
+});
 
-function addService() {
-  var list = prompt("Add services?");
-  htmlServices.innerHTML += "<li>" + list +"</li>";
-}
+// Productions/Services
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('addService').addEventListener('click', function() {
+      var title = document.getElementById('serviceTitle').value;
+      var description = document.getElementById('serviceDescription').value;
+      var pricing = document.getElementById('servicePricing').value;
+
+      var listItem = document.createElement('div');
+      listItem.innerHTML = `
+          <h5>${title}</h5>
+          <p>${description}</p>
+          <p>Pricing: ${pricing}</p><br>`;
+      document.getElementById('servicesList').appendChild(listItem);
+
+      // Reset input fields
+      document.getElementById('serviceTitle').value = '';
+      document.getElementById('serviceDescription').value = '';
+      document.getElementById('servicePricing').value = '';
+  });
+});

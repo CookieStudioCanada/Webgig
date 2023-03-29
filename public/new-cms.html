@@ -18,8 +18,8 @@
     <a href="index.html">
         <h1>WebGIG</h1>
     </a>
-    <button class="toggle-button" onclick="openModal('doc')">DOC</button>
     <button data-step="1" data-intro="<h5>Welcome to Wegig CMS</h5>This is a simple tour of how to use the CMS. For more questions, check out our <a style='text-decoration: underline'>Documentation</a> or <a style='text-decoration: underline'>Discord server</a>" class="toggle-button" id="start-tour-btn">?</button>
+    <button data-step="2" data-intro="Click here to access documentation modal" class="toggle-button" onclick="openModal('doc')">DOC</button>
     <button class="toggle-button" id="toggle-button">X</button>
   </header>
 
@@ -48,27 +48,21 @@
         <form id="website-creation-form" action="your-server-side-script" method="POST">
           <div class="the-form">
 
-            <h2>Describe your company!</h2>
+            <h2>Your business</h2>
 
-            <div data-step="2" data-intro="Please tell us the name of your business?" class="form-group">
-              <label for="company-name">Company Name</label>
+            <div data-step="3" data-intro="Please tell us the name of your business?" class="form-group">
+              <label for="company-name">Business Name</label>
               <input type="text" id="company-name" name="company-name" required>
             </div>
             
-            <div data-step="3" data-intro="What style fits most with your business? For more information, <a style='text-decoration: underline;'>see documentation</a>" class="form-group"> <!-- Make href='docREF' in the code.-->
+            <div data-step="4" data-intro="What style fits most with your business? For more information, <a style='text-decoration: underline;'>see documentation</a>" class="form-group"> <!-- Make href='docREF' in the code.-->
               <label for="sectors">Business description</label>
               <select id="sectors" name="description" required>
                 <option value="">Choose an option</option>
-                <option value="product">Product (one product focus)</option>
-                <option value="freelancer">Freelancer (gig worker)</option>
-                <option value="smallteam">Small Team (0-5 SMB)</option>
-                <option value="artist">Artist</option>
+                <option value="product">Products</option>
+                <option value="services">Services</option>
+                <option value="smallteam">Small Team</option>
               </select>
-            </div>
-            
-            <div data-step="4" data-intro="Please tell us about your services. We want to know 3 things : Service name / Description / Pricing.<br><br><p>Exemple : Lawn mower : Get your lawn mows by our team (30$/h).</p>" class="form-group">
-              Services <button onclick="addService()">+</button>
-              <div id="html-services"></div> <!-- Make it required -->
             </div>
       
             <div data-step="5" data-intro="Do you want a white label or custom domain. See differences." class="form-group">
@@ -98,13 +92,20 @@
             </div>
           
           </div>
-            <div data-step="8" data-intro="Here is the playground... You can modify content, delete, add medias, move the sections and also add new sections." class="section-list">
+            <div data-step="8" data-intro="<h5>Playground</h5>Welcome to playground, you can modify content, delete, add medias, move the sections and also add new sections." class="section-list">
             <h2>Playground</h2>
 
             <!-- Section: Intro -->
-            <div data-step="9" data-intro="Here is a section. To modify content, delete, add medias or move the sections, click on the buttons."class="section">
-                <h4 class="section-title">Intro</h4>
-                <p class="section-content">Content for the intro section...</p>
+            <div data-step="9" data-intro="<h5>Sections</h5>Here is a section. To modify content, delete, add medias or move the sections, click on the buttons."class="section">
+                <h4 class="section-title">Introduction</h4>
+                <p class="section-content">The introduction style is <a id="selectedOption" style='font-weight: bold;'>Choose an option</a>. <a onclick="openModal('doc')" style='text-decoration: underline; cursor: pointer;'>See examples.</a><br><br>Use the dropdown menu to change :
+                  <select id="styleDropdown">
+                    <option value="">Choose an option</option>
+                    <option value="option1">Image + CTA button</option>
+                    <option value="option2">Video</option>
+                    <option value="option3">Image</option>
+                  </select>
+                </p>
                 <div class="section-buttons">
                 <button data-step="10" data-intro="Modify buttons. Please note that our team will provide you with contents based on this form."type="button" class="section-btn layout-btn">Layout</button>
                 <button data-step="11" data-intro="Press to delete section." type="button" class="section-btn delete-btn">Delete</button>
@@ -116,7 +117,24 @@
             <!-- Section: Products/Services -->
             <div class="section">
                 <h4 class="section-title">Products/Services</h4>
-                <p class="section-content">Content for the products/services section...</p>
+                <p class="section-content">Add your products/services...</p>
+
+                <form id="servicesForm">
+                  <label for="serviceTitle">Title</label>
+                  <input type="text" id="serviceTitle" name="serviceTitle" placeholder="Service Title">
+                  <br><br>
+                  <label for="serviceDescription">Description</label>
+                  <input type="text" id="serviceDescription" name="serviceDescription" placeholder="Service Description"></input>
+                  <br><br>
+                  <label for="servicePricing">Pricing</label>
+                  <input type="text" id="servicePricing" name="servicePricing" placeholder="Service Pricing">
+                  <br><br>
+                  <button type="button" id="addService">Add service</button>
+                  <br><br>
+                </form>
+          
+                <div id="servicesList"></div>
+
                 <div class="section-buttons">
                 <button type="button" class="section-btn layout-btn">Layout</button>
                 <button type="button" class="section-btn delete-btn">Delete</button>
@@ -149,10 +167,22 @@
                 </div>
             </div>
 
+            <!-- Section: Contact us -->
+            <div class="section">
+              <h4 class="section-title">Contact us</h4>
+              <p class="section-content">Add your : Phone, Email, Map, Calendly</p>
+              <div class="section-buttons">
+              <button type="button" class="section-btn layout-btn">Layout</button>
+              <button type="button" class="section-btn delete-btn">Delete</button>
+              <button type="button" class="section-btn">Media</button>
+              <button type="button" class="section-btn move-btn">Move</button>
+              </div>
+            </div>            
+
             <!-- Section: FAQ -->
             <div class="section">
                 <h4 class="section-title">FAQ</h4>
-                <p class="section-content">Content for the FAQ section...</p>
+                <p class="section-content">FAQ builder</p>
                 <div class="section-buttons">
                 <button type="button" class="section-btn layout-btn">Layout</button>
                 <button type="button" class="section-btn delete-btn">Delete</button>
@@ -164,7 +194,7 @@
             <!-- Section: Footer -->
             <div class="section">
                 <h4 class="section-title">Footer</h4>
-                <p class="section-content">Content for the footer section...</p>
+                <p class="section-content">Footer : Twitter, Instagram, Facebook, Tiktok</p>
                 <div class="section-buttons">
                     <button type="button" class="section-btn layout-btn">Layout</button>
                     <button type="button" class="section-btn delete-btn">Delete</button>
@@ -182,6 +212,7 @@
                 <option value="products-services">Products/Services</option>
                 <option value="review">Review</option>
                 <option value="blog">Blog</option>
+                <option value="contactus">Contact us</option>
                 <option value="faq">FAQ</option>
                 <option value="footer">Footer</option>
                 <option value="payment">Payment</option>
@@ -190,7 +221,7 @@
             </div>
 
             <br>
-            <button data-step="15" data-intro="The submit button will save your choice, send you to create an account and payment page." type="submit">Submit</button>
+            <button data-step="15" data-intro="<h5>Submit</h5>The submit button will save your choice, send you to create an account and payment page." type="submit">Submit</button>
           </form>
     </div>
 
